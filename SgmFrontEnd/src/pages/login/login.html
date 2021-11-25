@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+* PROJETO: API
+* DESCRICAO: API RESTful - Application Programming Interface
+*            baseada na arquitetura REST- Representational State
+*            Transfer (Transferência Representacional de Estado).
+* Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+* Formato da resposta: JSON.
+* Cliente: TCC PUC Minas
+* Solicitante: Augusto
+
+* Descricao do arquivo:
+* login do cliente cidadao
+
+* Desenvolvimento:
+* Augusto Arruda 
+* Email: augusto.rr.arruda@gmail.com
+* Cel: (092) 991848979
+* Manaus, 04 de abril de 2021.
+-->
+<html lang="pt-br">
+    <head>
+        <title>Serviço ao Cidadão</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Augusto R R Arruda Analista TI / Desenvolvedor Full Stack" />
+        <link rel="icon" type="image/png"  href="./src/img/sgm.ico"/>
+        <!--carga css-->
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css"><!--ajustes da tela-->    
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css.map"><!--ajustes da tela-->   
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap-reboot.css"><!--ajustes da tela-->
+        <link rel="stylesheet" href ="./src/pages/login/css/login.css" >
+        <!--carga js-->
+        <script src="./src/package_plugins/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script><!--Cookie-->
+        <script src="./src/package_plugins/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script><!--Cookie-->
+        <script src="./src/package_plugins/ajax.googleapis.com/ajax/libs/popper.js.1.11.0/popper.min.js"></script><!--Tooltip-->
+        <script src="./src/package_plugins/code.jquery.com/core/jquery-3.4.1/jquery-3.4.1.min.js"></script><!--Modal-->
+        <script src="./src/package_plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script><!--ajustes da tela-->
+        <script type="text/javascript" language="javascript" src="./src/pages/login/js/login.js"></script>
+    </head>
+    
+    <body>
+        
+        <div class="wrapper fadeInDown" >
+            <div id="formContent" >
+                <!--Icone centralizado-->
+                <div class="class_logo"> 
+                    <img src="./src/img/logo_sgm_130.png" alt='logo_sgm_130'>
+                </div>
+                <!--Login-->
+                <div class="fadeIn first"> <h2>MÓDULO DE ADMINISTRACAO</h2> </div>
+                <input type="text" class="fadeIn second" id="emailacesso" name="emailacesso" placeholder="E-MAIL" required>
+                <input type="password" class="fadeIn third" id="senhaacesso" name="senhaacesso" placeholder="SENHA" maxlength="12" required>
+                <input type="submit" class="fadeIn fourth" id="loginacesso" name="loginacesso" onclick="loginacesso()" value="ACESSO">
+                <!--informes-->
+                <div id="formFooter">
+                    <table class="class_table_info">
+                        <tr>
+                            <!--<th class="class_table_info_esq"><a class="underlineHover" onclick="candidatorecuperarsenha()">Esqueceu a senha?</a> </th>-->
+                            <!--<th class="class_table_info_dir"><a class="underlineHover" onclick="cadastrocidadao()">Cadastrar acesso</a></th>-->
+                        </tr>
+                    </table> 
+                </div>
+                
+            </div>
+        </div>
+        <!-- Modal -->
+        <!--https://getbootstrap.com/docs/4.3/components/modal/-->
+        <!--caracteristicas-> extra largo, sem barra de rolagem interna-->
+        <div class="modal fade" id="modal_cidadaonovo" tabindex="-1" role="dialog" aria-labelledby="modal_pacientenovo" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title"><figure class="modal_icone_titulo_xl"></figure><div class="modal_titulo_xl">Cadastro do Cidadão</div></div>
+                        <figure class="modal_icone_close_modal" data-dismiss="modal" aria-label="Close"></figure>
+                    </div>
+                    <div class="modal-body">
+                        <div id="div_cidadaonovo"></div><!--Recepciona dados-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,250 @@
+/**
+ * -------------------------------------------------------
+ * PROJETO: Sapopemba
+ * DESCRICAO: Sistema de Telessaude do estado do Amazonas
+ * Cliente: Governo do Estado do Amazonas - SUS - UEA
+ * Solicitante: Governo do Estado do Amazonas - SUS - UEA
+ * -------------------------------------------------------
+ * Descricao do arquivo:
+ * login de acesso para modulo de cadastro
+ * -------------------------------------------------------
+ * Desenvolvimento:
+ * NAP UEA
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 24 de março de 2020.
+ */
+
+
+
+/*www.caelum.com.br/apostila-html-css-javascript/css-avancado/#seletores-avanados*/
+
+/*--Edição de estilos - padrao responsivo --*/
+/*Dispositivos extra pequenos (extra extra extra small) - celulares, até 767px - by augusto arruda*/ 
+@media (max-width: 414px) {/*iphone 6,7,8 plus*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:71px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:11px;} 
+    /*base superior fixa*/
+    .topo { height: 78px; bottom: 0px;top: 0px;  padding: 0; background-image:url('../resources/img/fundomenu_celular.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%}
+    .topo_icone_instituicao{ cursor: pointer; width: 67px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_60.png') center center no-repeat;}
+    .viewtimer{font-size:11px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%;}
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%;}
+    .topo_logout_name{ margin-left: 34px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:11px; color: #3e3e3e;}
+    .colLAPE { width: 24%;}
+    .topo_last_access{font-size:7px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:7px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+/*Dispositivos extra pequenos (extra extra small) - celulares, até 767px - by augusto arruda*/ 
+@media (min-width: 415px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:71px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:11px;} 
+    /*base superior fixa*/
+    .topo { height: 78px; bottom: 0px;top: 0px;  padding: 0; background-image:url('../../../img/fundomenu_celular.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 67px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_60.png') center center no-repeat;}
+    .viewtimer{font-size:11px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:11px; color: #3e3e3e;}
+    .colLAPE { width: 24%; }
+    .topo_last_access{font-size:7px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:7px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+
+/*Dispositivos extra pequenos (extra extra small) - celulares, até 767px - by augusto arruda*/ 
+@media (min-width: 480px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:71px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:11px;} 
+    /*base superior fixa*/
+    .topo { height: 78px; bottom: 0px;top: 0px;  padding: 0; background-image:url('../../../img/fundomenu_celular.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 67px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_60.png') center center no-repeat;}
+    .viewtimer{font-size:12px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:12px; color: #3e3e3e;}
+    .colLAPE { width: 24%;}
+    .topo_last_access{font-size:9px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:9px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+
+/*Dispositivos extra pequenos (extra small) - celulares, até 767px ref boostrap -> .col-xs-*/ 
+@media (min-width: 576px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:97px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:12px;} 
+    /*base superior fixa*/
+    .topo { height: 97px; bottom: 0px;top: 0px;  padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_tablet.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 93px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_90.png') center center no-repeat;}
+    .viewtimer{font-size:12px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_18.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_20.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:12px; color: #3e3e3e;}
+    .colLAPE { width: 24%; }
+    .topo_last_access{font-size:9px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:9px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+
+/*Dispositivos extra pequenos (extra small) - celulares, até 767px ref boostrap -> .col-xs-*/ 
+@media (min-width: 640px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:97px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:12px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_tablet.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_120.png') center center no-repeat;}
+    .viewtimer{font-size:14px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 21%; }
+    .topo_last_access{font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+
+
+
+
+/*Dispositivos pequenos (small) - tabletes 768px a 991px - ref boostrap -> .col-sm-*/ 
+@media (min-width: 768px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:97px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:13px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_120.png') center center no-repeat;}
+    .viewtimer{font-size:14px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 16%; }
+    .topo_last_access{font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+
+
+
+
+/*Dispositivos médios (medium) - Médios desktops 991px a 1199px - ref boostrap -> .col-md-*/ 
+@media (min-width: 992px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:97px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_120.png') center center no-repeat;}
+    .viewtimer{font-size:14px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 10%; }
+    .topo_last_access{font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}
+
+ 
+ 
+ 
+ 
+ 
+/*Dispositivos grandes (large) - Grandes desktops acima de 1199px ref boostrap -> .col-lg-*/ 
+@media (min-width: 1200px) {
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{position: sticky; padding:15px; z-index:10; top:97px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat; position: sticky; z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_telessaude_negativo_120.png') center center no-repeat;}
+    .viewtimer{font-size:14px; color:#bf2424; }
+    .topo_user_icone{ width: 20px; height: 20px; margin: 0px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin: 0px; background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 7%; }
+    .topo_last_access{font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    .vago{height:auto; position:relative; margin-top:10px;}
+}

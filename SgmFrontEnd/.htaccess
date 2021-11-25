@@ -1,0 +1,74 @@
+#
+#  PROJETO: API
+#  DESCRICAO: API RESTful - Application Programming Interface
+#              baseada na arquitetura REST- Representational State
+#              Transfer (Transferência Representacional de Estado).
+#  Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+#  Formato da resposta: JSON.
+#  Cliente: TCC PUC Minas
+#  Solicitante: Augusto
+#
+#  Descricao do arquivo:
+#  login do cliente cidadao
+#
+#  Desenvolvimento:
+#  Augusto Arruda 
+#  Email: augusto.rr.arruda@gmail.com
+#  Cel: (092) 991848979
+#  Manaus, 04 de abril de 2021.
+#
+
+
+#-----------------------
+# Modelo -> Query string 
+#-----------------------
+#Baseado na variavel global ($_GET);
+#echo '<hr>';
+#echo '<a href="?pagina=sobre">Sobre</a>';
+#usar CORE ou Front_controller
+#https://www.dirceuresende.com/blog/utilidades-do-arquivo-htaccess/
+
+
+#--------------------------------------
+# Modelo ->URL AMIGAVEL Uso de htaccess
+#--------------------------------------
+
+##padrao1
+#RewriteEngine On
+##aqui criamos uma condição para que os arquivos sejam ignorados nas regras abaixo
+#RewriteCond %{REQUEST_FILENAME} !-f
+##aqui criamos uma condição para que diretórios sejam ignorados nas regras abaixo
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^login$ protected/views/home/login.php [QSA,L,NC]
+#RewriteRule ^admlogin$ protected/views/admhome/login.php [QSA,L,NC]
+
+##padrao2
+# <filesMatch ".(html|htm|js|css|jpg|png)$">
+<filesMatch ".(jpg|png)$">
+    FileETag None
+    <ifModule mod_headers.c>
+        Header unset ETag
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "Wed, 08 Jan 1975 05:00:00 GMT"
+    </ifModule>
+</filesMatch>
+
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+#fix rules  - Url amigavel
+#RewriteRule ^lul/?$ ./public/login.html [QSA,L,NC]
+#RewriteRule ^login/?$ ./public/login.html [QSA,L,NC]
+RewriteRule ^login/?$ ./src/pages/login/login.html [QSA,L,NC]
+RewriteRule ^index/?$ ./src/pages/index/index.html [QSA,L,NC]
+RewriteRule ^server/?$ ./src/pages/server/index.html [QSA,L,NC]
+
+# Bloqueia a listagem de diretórios.
+Options All -Indexes
+# Mensagem de erro personalizada.
+ErrorDocument 500 "<h1>Desculpe! Erro interno do servidor!</h1>
+ErrorDocument 403 "<h1>Desculpe! Acesso nao permitido!</h1>
+ErrorDocument 404 "<h1>Desculpe! Pagina nao encontrada!</h1>
+ErrorDocument 400 "<h1>Desculpe! Erro no protocolo de acesso!</h1>

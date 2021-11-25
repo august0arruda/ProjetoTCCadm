@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+* PROJETO: API
+* DESCRICAO: API RESTful - Application Programming Interface
+*            baseada na arquitetura REST- Representational State
+*            Transfer (Transferência Representacional de Estado).
+* Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+* Formato da resposta: JSON.
+* Cliente: TCC PUC Minas
+* Solicitante: Augusto
+
+* Descricao do arquivo:
+* acesso a dados do cliente cidadao
+
+* Desenvolvimento:
+* Augusto Arruda 
+* Email: augusto.rr.arruda@gmail.com
+* Cel: (092) 991848979
+* Manaus, 04 de abril de 2021.
+-->
+<html lang="pt-br">
+    <head>
+        <title>Serviço ao Cidadão</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Augusto R R Arruda Analista TI / Desenvolvedor Full Stack" />
+        <!--<link rel="icon" type="image/png"  href="./resources/img/sgm.ico"/>-->
+        <!--carga css-->
+        <link rel="stylesheet" href ="./src/pages/menu/css/menu.css" >
+        <!--carga js-->
+        <script type="text/javascript" language="javascript" src="./src/pages/menu/js/menu.js"></script>
+    </head>
+    <body>
+
+        <!--barra de status geral-->
+        <div class="topo fixed-top" >
+            <table class="tablemenu" >
+                <tr>
+                    <th rowspan="3" class="colI" ><figure class="topo_icone_instituicao" onclick="gohome()"></th>
+                    <th rowspan="3" class="colS" ><p class="viewtimer"></p></th>
+                    <th><figure class="topo_user_icone"></figure><p class="topo_user_name"></p></th>
+                    <th><figure class="topo_logout_icone"></figure><p onclick="logout()" class="topo_logout_name">Sair</p></th>
+                </tr>
+                <tr>
+                    <th colspan="2" class="colLAPE" ><p class="topo_perfil">Perfil:&nbsp;<span class="userperfil"></span></p></th>
+                </tr>
+            </table> 
+        </div>
+
+        <!--barra de menu-->
+        <nav class="fixed-top menu_geral navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                <!--menu esquerdo-->  
+                <a class="navbar-brand" href="./index">PÁGINA INICIAL</a>
+                <!--menu esquerdo com submenus-->  
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Testes POC</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                          <a class="dropdown-item" href="#"  onclick="testecookie()" >Teste Cookie</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#"   onclick="projetonovo()" >Novo Projeto</a>
+                          <a class="dropdown-item" href="#"   onclick="viewcidadao()" >Visualizar Cadastros de Cidadãos</a>
+                          <a class="dropdown-item" href="#"   onclick="viewsolicitacao()" >Visualizar Demandas</a>
+                        </div>
+                    </li>
+                    
+                    
+                    <!--submenu-->
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administração</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-header">Cadastros</a>
+
+
+                            
+                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="#">Usuário</a>
+                            
+                            <a class="dropdown-item" href="#">Secretaria</a>
+                            <a class="dropdown-item" href="#">Orgão Municipal</a>
+                            <a class="dropdown-item" href="#">Autarquias</a>
+                            <a class="dropdown-item" href="#">Fundações</a>
+                            <a class="dropdown-item" href="#">Empresa Municipal</a>
+                            
+                            
+                            
+                            
+                            
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Arrecadação de impostos</a>
+                            <a class="dropdown-item" href="#">IPTU</a>
+                            <a class="dropdown-item" href="#">ISS</a>
+                            <a class="dropdown-item" href="#">Alvará</a>
+                            <a class="dropdown-item" href="#">Licenciamento</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Denuncias</a>
+                            <a class="dropdown-item" href="#">Vandalismo</a>
+                            <a class="dropdown-item" href="#">Loteamento irregular</a>
+                        </div>
+                    </li>
+                    
+                    
+                    <!--submenu-->
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços ao cidadão</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-header">Serviços</a>
+                            <a class="dropdown-item" href="#">Anexar dados de imóvel</a>
+                            <a class="dropdown-item" href="#">Anexar dados de pessoa jurídica</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Arrecadação de impostos</a>
+                            <a class="dropdown-item" href="#">IPTU</a>
+                            <a class="dropdown-item" href="#">ISS</a>
+                            <a class="dropdown-item" href="#">Alvará</a>
+                            <a class="dropdown-item" href="#">Licenciamento</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Denuncias</a>
+                            <a class="dropdown-item" href="#">Vandalismo</a>
+                            <a class="dropdown-item" href="#">Loteamento irregular</a>
+                        </div>
+                    </li>
+                    
+                    
+                    
+   
+                    <!--submenu-->
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-header">Processos</a>
+                            <a class="dropdown-item" href="#">Administrativos</a>
+                            <a class="dropdown-item" href="#">Financeiros</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Demandas</a>
+                            <a class="dropdown-item" href="#">IPTU</a>
+                            <a class="dropdown-item" href="#">ISS</a>
+                            <a class="dropdown-item" href="#">Alvará</a>
+                            <a class="dropdown-item" href="#">Licenciamento</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-header">Denuncias</a>
+                            <a class="dropdown-item" href="#">Vandalismo</a>
+                            <a class="dropdown-item" href="#">Loteamento irregular</a>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                <!--menu direito-->  
+                <ul class="navbar-nav dropdown-menu-right"> <!--nav bar a direita-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index" tabindex="-1" aria-disabled="true">Dados Pessoais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index" tabindex="-1" aria-disabled="true">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="#" onclick="logout()" tabindex="-1" aria-disabled="true">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    </body>
+</html>

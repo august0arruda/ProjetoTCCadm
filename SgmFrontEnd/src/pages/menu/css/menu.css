@@ -1,0 +1,223 @@
+/*
+* PROJETO: API
+* DESCRICAO: API RESTful - Application Programming Interface
+*            baseada na arquitetura REST- Representational State
+*            Transfer (Transferência Representacional de Estado).
+* Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+* Formato da resposta: JSON.
+* Cliente: TCC PUC Minas
+* Solicitante: Augusto
+*
+* Descricao do arquivo:
+* estilos css: login.thml
+*
+* Desenvolvimento:
+* Augusto Arruda 
+* Email: augusto.rr.arruda@gmail.com
+* Cel: (092) 991848979
+* Manaus, 04 de abril de 2021.
+*/
+
+
+/*www.caelum.com.br/apostila-html-css-javascript/css-avancado/#seletores-avanados*/
+
+/*--Edição de estilos - padrao responsivo --*/
+/*Dispositivos extra pequenos (extra extra extra small) - celulares, até 360px - by augusto arruda*/ 
+@media (max-width: 360px) {/* dispositovos menores que Galaxy S9/S9 + abdroid 7.0*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:68px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:12px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_celular.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 86%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 95px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_60.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:12px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:12px; color: #3e3e3e;}
+    .colLAPE { width: 50%; }
+    .topo_last_access{margin-bottom: 0px; font-size:9px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:10px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 361px) {/*Galaxy S9/S9 + abdroid 7.0*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:68px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:12px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_celular.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 86%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 95px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_60.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:12px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:12px; color: #3e3e3e;}
+    .colLAPE { width: 50%; }
+    .topo_last_access{margin-bottom: 0px; font-size:9px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:10px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 414px) {/*iPhone 6/7/8 Plus iOS 11*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:68px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:12px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_celular.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 94%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 95px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_60.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_16.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:12px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_18.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:12px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:12px; color: #3e3e3e;}
+    .colLAPE { width: 42%; }
+    .topo_last_access{margin-bottom: 0px; font-size:9px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:10px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 480px) {/*SmartPhone e Tablet T1*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_tablet.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_60.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_18.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_20.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 42%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 576px) {/*SmartPhone e Tablet T2*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_70.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 28%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 640px) {/*SmartPhone e Tablet T3*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_70.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 16%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 768px) {/*iPad*/
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_70.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 10%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}
+
+
+@media (min-width: 992px) {/*desktops 991px ou superior */ 
+    /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_70.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 10%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}
+    /*vao para efeito de encolhimento*/
+    /*.vago{height:auto; position:relative; margin-top:10px;}*/
+}

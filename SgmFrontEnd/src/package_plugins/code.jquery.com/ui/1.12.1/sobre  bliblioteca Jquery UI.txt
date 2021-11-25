@@ -1,0 +1,15 @@
+O que é jQuery UI
+
+O jQuery UI é uma ferramenta de interação e construída em cima do núcleo da jQuery que permite que você possa animar os diferentes elementos HTML, lhes dando impressionantes interações front-end com relativa facilidade. Em outras palavras, é uma rica e extensível biblioteca de componentes gráficos criada para maximizar o uso e poder da jQuery. Totalmente baseada no framework jQuery, é usada para fornecer uma melhor interação entre o usuário e o cliente (web browser), com recursos ricos como animação, efeitos, componentes estilizáveis, etc.
+
+O pacote de interface é basicamente uma coleção de funções de interface de usuário que estão relacionadas e podem ser divididas em três módulos principais:
+
+-Widgets, que contêm interfaces de usuário pré-construídas e customizáveis??.
+-Efeitos, que são animações muito simples e fáceis que você pode fazer para um elemento de uma página, tais como agitá-lo, explodi-lo, e assim por diante.
+-Interação ampliada do mouse com os elementos da página (por exemplo, arrastar e soltar).
+
+Nota 2: Client side é um termo usado na comunidade de desenvolvimento para designar toda operação ou ação usada no lado do cliente, em uma aplicação que pertença à arquitetura cliente-servidor. Geralmente o cliente é um web browser, e as operações são requisitadas inicialmente ao mesmo, daí o termo “lado do cliente”.
+
+Muito foi indagado acerca do projeto nos últimos anos, especialmente quando do lançamento do mesmo. A mesma desconfiança da tecnologia pôde ser observada à época do lançamento do projeto jQuery. Entretanto, ao contrário do que muito se especulou o projeto vingou e promete crescer rapidamente com o passar do tempo. Isso acontece, assim como em muitas outras tecnologias, por causa da grande integração da comunidade de desenvolvedores que se interessam pela ferramenta e investem na correção de bugs e nos lançamentos de novas versões (releases).
+
+Outro aspecto muito interessante do pacote UI é a capacidade de criar o seu próprio "tema", com a capacidade de estilização das cores, fontes e configurações de estilo, widgets pré-construídos, permitindo, assim, que os widgets que você baixar pareçam que foram feitos especialmente para o seu web site.

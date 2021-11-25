@@ -1,0 +1,126 @@
+/**
+ * -------------------------------------------------------
+ * PROJETO: Sapopemba
+ * DESCRICAO: Sistema de Telessaude do estado do Amazonas
+ * Cliente: Governo do Estado do Amazonas - SUS - UEA
+ * Solicitante: Governo do Estado do Amazonas - SUS - UEA
+ * -------------------------------------------------------
+ * Descricao do arquivo:
+ * login de acesso para modulo de cadastro
+ * -------------------------------------------------------
+ * Desenvolvimento:
+ * NAP UEA
+ * Augusto Arruda 
+ * Analista TI - Desenvolvedor Full Stack
+ * Email: augustoarruda@uea.edu.br
+ * Cel: (092) 991848979
+ * Manaus, 24 de março de 2020.
+ */
+
+.label_coluna_thead {font-size:10px; margin-bottom:0px; margin-bottom:0px;}
+
+.coluna_thead {text-align: right;}
+
+.coluna_tbody {color: #808080; font-size:10px; padding-left:0px; padding-right:0px; text-align: right;}
+
+.cth_0, .ctb_0{ width:30px}
+
+.cth_1, .ctb_1{ width:25px}
+
+.acao{cursor:zoom-in;}
+
+.padraotabelaconsulta {width:100%;}
+
+.btn_novo_paciente {float: right; /*T D B E*/margin: 0 0 12px 0;}
+
+.class_id_paciente {float: right; }
+
+
+
+#paciente_div_newnascimentoestado, #paciente_div_newnascimentocidade, .div_paciente_selecionado {display: none;}
+
+/*Animacao de carga - setado os atributos na tag da imagem por conta da carga apresentar um delay*/
+div.div_buscapaciente {position: relative }
+
+/*tyle="margin-top: 0px;padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;"*/
+
+
+
+
+
+
+
+/*img.loading_div_buscapaciente {display: none; margin: 0; width:150px; height:150px; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)}*/
+
+/*padrao modal*/
+.modal-header{ padding: 12px; text-transform: uppercase; background-color: #00A680; font-weight: bold;    color:#ffffff;}
+.modal-footer{ padding-top: 6px; padding-bottom: 6px;}
+/*atribui as configurações quando existir as duas classes*/
+.modal_icone_close_modal{float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; width: 25px; height: 25px; margin: 0px; background:url('../img/sair_15.png') center center no-repeat;}
+.modal_icone_close_modal:hover{ cursor: pointer; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .75; width: 25px; height: 25px; margin: 0px; background:url('../img/sair_15.png') center center no-repeat;}
+
+.modal_icone_titulo_xl{ width: 98px; height: 39px;  margin-top: 0px; margin-bottom: 0px; background:url('../img/logo_telessaude_negativo_celular.png') center center no-repeat;}
+.modal_titulo_xl{position:absolute; top: 23px; bottom: 0px; left: 119px; right: 0px; padding-top: 0px; padding-left: 0px; width: 330px; height: 32px;}
+/*controles - cancelar*/
+.btn-default{padding-top: 0px; padding-bottom: 0px; padding-right: 6px;  padding-left: 6px; border-color: #00A680;}
+.btn-default:hover{padding-top: 0px; padding-bottom: 0px; padding-right: 6px; padding-left: 6px; background-color: #ebedec; border-color: #00A680;}
+.modal_icone_cancelar_xl{position: relative; right: 40px; width: 110px; height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../img/cancelarblack.png') center center no-repeat; }
+.modal_titulo_cancelar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+/*controles - cadastrar*/
+.btn-success{padding-top: 0px; padding-bottom: 0px; padding-right: 6px; padding-left: 6px; color: #fff; background-color: #00A680; border-color: #00A680;}
+.btn-success:hover{padding-top: 0px; padding-bottom: 0px; padding-right: 6px; padding-left: 6px; color: #fff; background-color: #28a05c; border-color: #00A680;}
+.modal_icone_cadastrar_xl{position: relative; right: 40px; width: 110px;  height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../img/confirmar.png') center center no-repeat;  }
+.modal_titulo_cadastrar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+
+.table_radio_inline{width:100%}
+.table_radio_inline_selec{padding-top: 12px; text-align:left; width:18px;}
+.table_radio_inline_name{padding-top: 12px; text-align:left; vertical-align:middle;}
+
+.table_busca_cep_input{text-align:left;}
+.table_busca_cep_colunafixa{text-align:left; width:2px;}
+.table_busca_cep_icone{text-align:left; width:25px; vertical-align:middle;}
+
+.obrigatorio{color: #ff0000;}
+.label_obrigatorio{padding-bottom:15px; font-size:12px; color: #ff0000;}
+.label_adicional{font-style:italic; /*T D B E*/margin: 3px 0 3px 0; /*T D B E*/padding: 0 6px 0 6px; font-size:12px; color: #005945;}
+.label_titulogeral{font-style:italic; /*T D B E*/margin: 3px 0 3px 0; /*T D B E*/padding: 0 6px 0 6px; font-size:18px; color: #005945;}
+.class_subtitulo{text-align:right;}
+/*padrao ajuste formacao telessaude*/
+.form-row, .form-control{font-family: 'Open Sans', sans-serif; font-size: 14px; color: #005945;/*cor das fontes (mais escura que o padrao)*/}
+
+/*Animacao de carga - setado os atributos na tag da imagem por conta da carga apresentar um delay*/
+div.pacientenovo {position: relative }
+/*img.loading_div_dadoprofissional {display: none; margin: 0; width:150px; height:150px; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)}*/
+.class_paciente_exibir_foto { display: block; position: relative; /*cursor: pointer;*/ overflow: hidden; width: 100%; max-width: 100%; /*height: 200px;*/  padding: 5px 10px; font-size: 14px; line-height: 22px; color: #777;  background-color: #FFF; background-image: none; text-align: center; border: 2px solid #E5E5E5; -webkit-transition: border-color .15s linear; transition: border-color .15s linear;}
+.table_paciente_selecionado_input{text-align:left;}
+.table_paciente_selecionado_colunafixa{text-align:left; width:2px;}
+.table_paciente_selecionado_idade{font-family: 'Open Sans', sans-serif; font-size: 12px; color: #005945; font-style:italic; text-align:left; width:60px; vertical-align:middle;}
+
+
+
+/*#viewtimer{font-size:30px; color:#bf2424; }*/
+#viewtimer{font-size:30px; }
+
+
+
+
+
+ /*menu geral*/
+    .menu_geral.navbar.navbar-expand-lg.navbar-light.bg-light{ padding:15px; z-index:10; top:72px;}
+    /*botaos navegacao encapsulados */
+    .navbar-toggler, .navbar-collapse, .navbar-brand{font-size:14px;} 
+    /*base superior fixa*/
+    .topo { padding: 9px 0 0 0; background-image:url('../../../img/fundomenu_desktop.png'); background-repeat: no-repeat;  z-index:11; }
+    .tablemenu { width: 100%; }
+    .topo_icone_instituicao{ cursor: pointer; width: 120px; height: 60px; margin: 0 0 0 8px; background:url('../../../img/logo_negativo_sgm_70.png') center center no-repeat;}
+    .viewtimer{font-size:14px;; color:#ffffff; }
+    .topo_user_icone{ width: 20px; height: 20px; margin-bottom: -18px; background:url('../../../img/user_20.png') center center no-repeat;}
+    .topo_user_name{ margin-bottom: 0px;  margin-left: 24px; font-size:14px; color:#ffffff;}
+    .colI { width:3%; }
+    .topo_logout_icone{ width: 22px; height: 22px; margin-bottom: -18px;  background:url('../../../img/logout_22.png') center center no-repeat;}    
+    .colS { width: 35%; }
+    .topo_logout_name{ margin-bottom: 0px; margin-left: 24px; font-size:14px; color:#ffffff;}
+    .topo_logout_name:hover{ margin-bottom: 0px; cursor: pointer; margin-left: 24px; font-size:14px; color: #3e3e3e;}
+    .colLAPE { width: 10%; }
+    .topo_last_access{margin-bottom: 0px; font-size:11px;; color:#ffffff;  padding:0px;}
+    .topo_perfil{margin-bottom: 0px; font-size:11px; color:#ffffff;}

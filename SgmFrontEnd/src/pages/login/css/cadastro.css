@@ -1,0 +1,555 @@
+/*
+* PROJETO: API
+* DESCRICAO: API RESTful - Application Programming Interface
+*            baseada na arquitetura REST- Representational State
+*            Transfer (Transferência Representacional de Estado).
+* Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+* Formato da resposta: JSON.
+* Cliente: TCC PUC Minas
+* Solicitante: Augusto
+*
+* Descricao do arquivo:
+* estilos css: login.thml
+*
+* Desenvolvimento:
+* Augusto Arruda 
+* Email: augusto.rr.arruda@gmail.com
+* Cel: (092) 991848979
+* Manaus, 04 de abril de 2021.
+*/
+    
+
+/* BASIC */
+html {
+  /*background-color: #56baed;*/
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+a {
+  color: #106610;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 20px 8px 30px 8px; 
+  color: #106610;
+}
+
+/* STRUCTURE */
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 350px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 8px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* TABS */
+h2.inactive {
+  color: #cccccc;
+}
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+/* FORM TYPOGRAPHY*/
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #106610;/*entrada default*/
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  /*-webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);*/
+  /*box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);*/
+  
+/*  -webkit-box-shadow: 0 10px 30px 0 rgb(16, 102, 17);
+   box-shadow: 0 10px 30px 0 rgb(16, 102, 17);*/
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 20px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #28a05c;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.fadeIn[type=text] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+
+.fadeIn[type=password] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input::-webkit-input-placeholder{
+    color:#106610;
+    /*background-color: #4C4;*/
+    /*text-transform: uppercase;*/
+    /*font-style: bold;*/
+}
+input::-moz-placeholder {
+    color:#106610;
+    /*background-color: #4C4;*/
+    /*text-transform: uppercase;*/
+    /*font-style: bold;*/
+}​
+input[type=text]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+/*input[type=text]:placeholder {
+  color: #0d0d0d;
+}*/
+
+
+/* ANIMATIONS */
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #106610;
+  content: "";
+  transition: width 0.2s;
+}
+.underlineHover:hover {
+  color: #106610;
+  cursor: pointer;
+}
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+
+/* OTHERS */
+*:focus {
+    outline: none;
+} 
+
+
+
+
+
+.class_logo {
+    height:150px
+    /*width:30%;*/
+}
+
+
+
+.class_logo {
+    height:150px
+    /*width:30%;*/
+}
+
+.class_logo img {
+    /*width:30%;*/
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+
+.class_table_info {
+    width:100%
+}
+
+
+.class_table_info_esq {
+    text-align:left
+}
+
+.class_table_info_dir {
+    text-align:right
+}
+
+
+.class_table_info_esq a, .class_table_info_dir a {
+    font-size: 12px
+}
+
+
+/*Fundo de tela - inativo*/
+.container-background {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /*padding: 15px;*/
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-size: cover;*/
+  /*background-size: auto;*/
+  background-size: 2000px ;
+  position: relative;
+  z-index: 1;  
+}
+
+.container-background::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.9);
+}
+
+
+
+/*Animacao de carga da div*/
+#loading_carga{
+    display: none;
+    position: absolute;
+    z-index:1; /*corrige o posicionamento em cima ou em baixo da imgem*/
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.loading_carga_class{
+    width:150px; 
+    display:block;
+    margin-left:auto;
+    margin-right:auto
+}
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+.label_coluna_thead {font-size:10px; margin-bottom:0px; margin-bottom:0px;}
+
+.coluna_thead {text-align: right;}
+
+.coluna_tbody {color: #808080; font-size:10px; padding-left:0px; padding-right:0px; text-align: right;}
+
+.cth_0, .ctb_0{ width:30px}
+
+.cth_1, .ctb_1{ width:25px}
+
+.acao{cursor:zoom-in;}
+
+.padraotabelaconsulta {width:100%;}
+
+.btn_novo_paciente {float: right; /*T D B E*/margin: 0 0 12px 0;}
+
+.class_id_paciente {float: right; }
+
+
+
+.loading_cidadaonovo {display: none;}
+
+/*Animacao de carga - setado os atributos na tag da imagem por conta da carga apresentar um delay*/
+div.div_buscapaciente {position: relative }
+/*img.loading_div_buscapaciente {display: none; margin: 0; width:150px; height:150px; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)}*/
+
+
+
+
+
+/*www.caelum.com.br/apostila-html-css-javascript/css-avancado/#seletores-avanados*/
+
+/*--Edição de estilos - padrao responsivo --*/
+/*Dispositivos extra pequenos (extra extra extra small) - celulares, até 360px - by augusto arruda*/ 
+@media (max-width: 360px) {/* dispositovos menores que Galaxy S9/S9 + abdroid 7.0*/
+    /*padrao modal*/
+    .modal-header{ padding: 12px; text-transform: uppercase; background-color: #00A680; font-weight: bold;    color:#ffffff;}
+    .modal-footer{ padding-top: 6px; padding-bottom: 6px;}
+    /*atribui as configurações quando existir as duas classes*/
+    .modal_icone_close_modal{float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_close_modal:hover{ cursor: pointer; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .75; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_titulo_xl{ width: 40px; height: 39px; margin-top: 0px; margin-bottom: 0px; background:url('../../../img/logo_sgm_25.png') center center no-repeat;}
+    .modal_titulo_xl{position:absolute; font-size: 15px; top: 23px; bottom: 0px; left: 54px; right: 0px; padding-top: 0px; padding-left: 0px; width: 215px; height: 25px;}
+    /*controles - cancelar*/
+    .btn-default{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; border-color: #00A680;}
+    .btn-default:hover{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; background-color: #ebedec; border-color: #00A680;}
+    .modal_icone_cancelar_xl{position: relative; right: 40px; width: 110px; height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/cancelarblack.png') center center no-repeat; }
+    .modal_titulo_cancelar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+    /*controles - cadastrar*/
+    .btn-success{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #00A680; border-color: #00A680;}
+    .btn-success:hover{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #28a05c; border-color: #00A680;}
+    .modal_icone_cadastrar_xl{position: relative; right: 40px; width: 110px;  height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/confirmar.png') center center no-repeat;  }
+    .modal_titulo_cadastrar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+}
+
+
+
+
+@media (min-width: 361px) {/*Galaxy S9/S9 + abdroid 7.0*/
+    /*padrao modal*/
+    .modal-header{ padding: 12px; text-transform: uppercase; background-color: #00A680; font-weight: bold;    color:#ffffff;}
+    .modal-footer{ padding-top: 6px; padding-bottom: 6px;}
+    /*atribui as configurações quando existir as duas classes*/
+    .modal_icone_close_modal{float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_close_modal:hover{ cursor: pointer; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .75; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_titulo_xl{ width: 40px; height: 39px; margin-top: 0px; margin-bottom: 0px; background:url('../../../img/logo_sgm_25.png') center center no-repeat;}
+    .modal_titulo_xl{position:absolute; font-size: 15px; top: 23px; bottom: 0px; left: 54px; right: 0px; padding-top: 0px; padding-left: 0px; width: 215px; height: 25px;}
+    /*controles - cancelar*/
+    .btn-default{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; border-color: #00A680;}
+    .btn-default:hover{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; background-color: #ebedec; border-color: #00A680;}
+    .modal_icone_cancelar_xl{position: relative; right: 40px; width: 110px; height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/cancelarblack.png') center center no-repeat; }
+    .modal_titulo_cancelar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+    /*controles - cadastrar*/
+    .btn-success{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #00A680; border-color: #00A680;}
+    .btn-success:hover{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #28a05c; border-color: #00A680;}
+    .modal_icone_cadastrar_xl{position: relative; right: 40px; width: 110px;  height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/confirmar.png') center center no-repeat;  }
+    .modal_titulo_cadastrar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+    
+}
+
+
+
+@media (min-width: 768px) {/*tabletes 768px a 991px*/ 
+    /*padrao modal*/
+    .modal-header{ padding: 12px; text-transform: uppercase; background-color: #00A680; font-weight: bold;    color:#ffffff;}
+    .modal-footer{ padding-top: 6px; padding-bottom: 6px;}
+    /*atribui as configurações quando existir as duas classes*/
+    .modal_icone_close_modal{float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_close_modal:hover{ cursor: pointer; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .75; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_titulo_xl{ width: 40px; height: 39px; margin-top: 0px; margin-bottom: 0px; background:url('../../../img/logo_sgm_25.png') center center no-repeat;}
+    .modal_titulo_xl{position:absolute; font-size: 15px; top: 23px; bottom: 0px; left: 54px; right: 0px; padding-top: 0px; padding-left: 0px; width: 215px; height: 25px;}
+    /*controles - cancelar*/
+    .btn-default{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; border-color: #00A680;}
+    .btn-default:hover{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; background-color: #ebedec; border-color: #00A680;}
+    .modal_icone_cancelar_xl{position: relative; right: 40px; width: 110px; height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/cancelarblack.png') center center no-repeat; }
+    .modal_titulo_cancelar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+    /*controles - cadastrar*/
+    .btn-success{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #00A680; border-color: #00A680;}
+    .btn-success:hover{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #28a05c; border-color: #00A680;}
+    .modal_icone_cadastrar_xl{position: relative; right: 40px; width: 110px;  height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/confirmar.png') center center no-repeat;  }
+    .modal_titulo_cadastrar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+
+}
+
+
+
+@media (min-width: 992px) {/*desktops 991px ou superior */ 
+    /*padrao modal*/
+    .modal-header{ padding: 12px; text-transform: uppercase; background-color: #00A680; font-weight: bold;    color:#ffffff;}
+    .modal-footer{ padding-top: 6px; padding-bottom: 6px;}
+    /*atribui as configurações quando existir as duas classes*/
+    .modal_icone_close_modal{float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_close_modal:hover{ cursor: pointer; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .75; width: 25px; height: 38px; margin: 0px; background:url('../../../img/sair_15.png') center center no-repeat;}
+    .modal_icone_titulo_xl{ width: 60px; height: 39px; margin-top: 0px; margin-bottom: 0px; background:url('../../../img/logo_sgm_50.png') center center no-repeat;}
+    .modal_titulo_xl{position:absolute; font-size: 19px; top: 23px; bottom: 0px; left: 80px; right: 0px; padding-top: 0px; padding-left: 0px; width: 270px; height: 28px;}
+    /*controles - cancelar*/
+    .btn-default{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; border-color: #00A680;}
+    .btn-default:hover{margin-top: 0px;padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; background-color: #ebedec; border-color: #00A680;}
+    .modal_icone_cancelar_xl{position: relative; right: 40px; width: 110px; height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/cancelarblack.png') center center no-repeat; }
+    .modal_titulo_cancelar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+    /*controles - cadastrar*/
+    .btn-success{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #00A680; border-color: #00A680;}
+    .btn-success:hover{padding-top: 2px;padding-bottom: 4px;padding-left: 18px;padding-right: 18px; color: #fff; background-color: #28a05c; border-color: #00A680;}
+    .modal_icone_cadastrar_xl{position: relative; right: 40px; width: 110px;  height: 30px; margin-bottom: 0px; margin-top: 0px; background:url('../../../img/confirmar.png') center center no-repeat;  }
+    .modal_titulo_cadastrar_xl{left: 50px; right: 0px; top: 4px; position: relative;}
+}
+
+
+
+
+.table_radio_inline{width:100%}
+.table_radio_inline_selec{padding-top: 12px; text-align:left; width:18px;}
+.table_radio_inline_name{padding-top: 12px; text-align:left; vertical-align:middle;}
+
+.table_busca_cep_input{text-align:left;}
+.table_busca_cep_colunafixa{text-align:left; width:2px;}
+.table_busca_cep_icone{text-align:left; width:25px; vertical-align:middle;}
+
+.obrigatorio{color: #ff0000;}
+.label_obrigatorio{padding-bottom:15px; font-size:12px; color: #ff0000;}
+.label_adicional{font-style:italic; /*T D B E*/margin: 3px 0 3px 0; /*T D B E*/padding: 0 6px 0 6px; font-size:12px; color: #005945;}
+.label_titulogeral{/*T D B E*/padding: 0 6px 0 6px; font-size:18px; color: #005945;}
+.class_subtitulo{text-align:right;}
+/*padrao ajuste formacao telessaude*/
+.form-row, .form-control{font-family: 'Open Sans', sans-serif; font-size: 14px; color: #005945;/*cor das fontes (mais escura que o padrao)*/}
+
+/*Animacao de carga - setado os atributos na tag da imagem por conta da carga apresentar um delay*/
+div.pacientenovo {position: relative }
+/*img.loading_div_dadoprofissional {display: none; margin: 0; width:150px; height:150px; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)}*/
+.class_paciente_exibir_foto { display: block; position: relative; /*cursor: pointer;*/ overflow: hidden; width: 100%; max-width: 100%; /*height: 200px;*/  padding: 5px 10px; font-size: 14px; line-height: 22px; color: #777;  background-color: #FFF; background-image: none; text-align: center; border: 2px solid #E5E5E5; -webkit-transition: border-color .15s linear; transition: border-color .15s linear;}
+.table_paciente_selecionado_input{text-align:left;}
+.table_paciente_selecionado_colunafixa{text-align:left; width:2px;}
+.table_paciente_selecionado_idade{font-family: 'Open Sans', sans-serif; font-size: 12px; color: #005945; font-style:italic; text-align:left; width:60px; vertical-align:middle;}

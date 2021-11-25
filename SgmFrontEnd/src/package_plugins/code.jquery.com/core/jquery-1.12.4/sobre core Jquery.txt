@@ -1,0 +1,3 @@
+O que é jQuery
+
+A jQuery é uma biblioteca (ou framework, segue o mesmo conceito) JavaScript gratuita e de código fonte aberto, criada e concebida com o objetivo de facilitar o desenvolvimento de scripts no lado do cliente, de forma a obter uma manipulação do HTML mais rápida e eficiente. Além disso, provê simplicidade e produtividade na utilização de scripts client side (ver Nota 2) para dinamizar as páginas. Com sua política “write less, do more” (escreva menos, faça mais), ele trouxe à tona inúmeros plugins e bibliotecas auxiliares de componentes, como o jQuery UI, por exemplo.

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+* PROJETO: API
+* DESCRICAO: API RESTful - Application Programming Interface
+*            baseada na arquitetura REST- Representational State
+*            Transfer (Transferência Representacional de Estado).
+* Base da API: Protocolo HTTP usando especificações dos métodos aceitos pelo endpoint.
+* Formato da resposta: JSON.
+* Cliente: TCC PUC Minas
+* Solicitante: Augusto
+*
+* Descricao do arquivo:
+* cadastro do cliente cidadao
+*
+* Desenvolvimento:
+* Augusto Arruda 
+* Email: augusto.rr.arruda@gmail.com
+* Cel: (092) 991848979
+* Manaus, 04 de abril de 2021.
+-->
+<html lang="pt-br">
+    <head>
+        <!--<title>Serviço ao Cidadão</title>-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Augusto R R Arruda Analista TI / Desenvolvedor Full Stack" />
+        <!--<link rel="icon" type="image/png"  href="./resources/img/sgm.ico"/>-->
+        <!--carga css-->
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css"><!--ajustes da tela-->    
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css.map"><!--ajustes da tela-->   
+        <link rel="stylesheet" href = "./src/package_plugins/bootstrap-4.3.1-dist/css/bootstrap-reboot.css"><!--ajustes da tela-->
+        <link rel="stylesheet" href ="./src/pages/login/css/cadastro.css" >
+        <!--carga js-->
+        <script src="./src/package_plugins/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script><!--Cookie-->
+        <script src="./src/package_plugins/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script><!--Cookie-->
+        <!--<script src="./src/package_plugins/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js.map"></script>Cookie-->
+        <script src="./src/package_plugins/ajax.googleapis.com/ajax/libs/popper.js.1.11.0/popper.min.js"></script><!--Tooltip-->
+        <script src="./src/package_plugins/code.jquery.com/core/jquery-3.4.1/jquery-3.4.1.min.js"></script><!--Modal-->
+        <script src="./src/package_plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script><!--ajustes da tela-->
+        <script type="text/javascript" language="javascript" src="./src/pages/login/js/cadastro.js"></script>
+    </head>
+    
+    <body>
+        <div class="cidadaonovo">
+            <!--<form>-->
+            <form id="form_cidadaonovo" name="form_cidadaonovo">
+                <input type="hidden" id="gerarcidadaonovo" name="gerarcidadaonovo" value="gerar_cidadaonovo">
+                <!--linha-->
+                <div class="form-row">
+
+                <div class="form-group col-md-12">
+                    <label for="input_nome"><span class="obrigatorio">*</span>Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" >
+                </div>
+                </div>
+                <!--linha-->
+                <!--Busca externa ViaCEP - Webservice CEP e IBGE-->
+                <label for="label_texto_adicional" class="label_adicional">Endereço</label>
+                <div class="form-row">
+                    <!--Chave da busca-->
+                    <div class="form-group col-md-2">
+                        <label for="input_nascimentodata" title="Preenchimento dos campos de forma automática a partir do CEP" ><span class="obrigatorio">*</span>CEP: &#128206; </label>
+                        <table> 
+                            <tr>
+                                <th class="table_busca_cep_input"><input type="text" class="form-control" id="enderecocep" name="enderecocep" placeholder="números" maxlength="8" style="padding-right:4px; padding-left:4px; font-size: 12px;"></th>
+                                <th class="table_busca_cep_colunafixa"></th>
+                                <th class="table_busca_cep_icone"><a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" ><img src="./src/img/correios.png" data-toggle="tooltip" title="Buscar CEP"></a></th>
+                                <th class="table_busca_cep_colunafixa"></th>
+                            </tr>
+                        </table>              
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="input_enderecologradouro"><span class="obrigatorio">*</span>Logradouro:</label>
+                        <input type="text" class="form-control" id="enderecologradouro" name="enderecologradouro" placeholder="Logradouro" >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="input_enderecocomplemento">Complemento:</label>
+                        <input type="text" class="form-control" id="enderecocomplemento" name="enderecocomplemento" placeholder="Complemento">
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="select_endereconum"><span class="obrigatorio">*</span>Número:</label>
+                        <input type="text" class="form-control" id="endereconum" name="endereconum" placeholder="Num" >
+                    </div>
+                </div>
+                <!--linha-->
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="input_enderecobairro"><span class="obrigatorio">*</span>Bairro:</label>
+                        <input type="text" class="form-control" id="enderecobairro" name="enderecobairro" placeholder="Bairro" >
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="input_enderecocidade"><span class="obrigatorio">*</span>Cidade:</label>
+                        <input type="text" class="form-control" id="enderecocidade" name="enderecocidade" placeholder="Cidade" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="input_enderecoestadouf"><span class="obrigatorio">*</span>UF:</label>
+                        <input type="text" class="form-control" id="enderecoestadouf" name="enderecoestadouf" placeholder="UF" >
+                    </div>
+                </div>
+                <!--linha-->
+                <label for="label_texto_adicional" class="label_adicional">Documentos</label>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="input_rgnum"><span class="obrigatorio">*</span>RG Número:</label>
+                        <input type="text" class="form-control" id="rgnum" name="rgnum" placeholder="Núm e simb" >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="selec_rgexpedidor"><span class="obrigatorio">*</span>Orgão Emissor/Uf:</label>
+                        <input type="text" class="form-control" id="rgexpedidor" name="rgexpedidor" placeholder="Núm e simb" >
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="input_rgdtexpedicao"><span class="obrigatorio">*</span>Data:</label>
+                        <input type="text" class="form-control" oninput="mascara(this, 'data')" id="rgdtexpedicao" name="rgdtexpedicao" maxlength="10" placeholder="dd/mm/aaaa" >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="input_rcpf"><span class="obrigatorio">*</span>Cpf:</label>
+                        <input type="text" class="form-control" oninput="mascara(this, 'cpf_cad_num')" id="cpf" name="cpf" maxlength="11" placeholder="Números" >
+                    </div>
+                </div>
+                <!--linha-->
+                <label for="label_texto_adicional" class="label_adicional">Contato e acesso</label>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="input_pacientetelefone">Telefone:</label>
+                        <input type="text" class="form-control" oninput="mascara(this, 'tel')" id="telefone" name="telefone"  placeholder="(__) _____-____" >
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="input_pacientetelefoner"><span class="obrigatorio">*</span>Celular:</label>
+                        <input type="text" class="form-control" oninput="mascara(this, 'cel')" id="celular" name="celular"  placeholder="(__) _____-____" >
+                    </div>
+                </div>
+
+                <!--linha-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input_email"><span class="obrigatorio">*</span>E-Mail:</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail pessoal" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input_repemail"><span class="obrigatorio">*</span>Confirmar E-Mail:</label>
+                        <input type="text" class="form-control" id="repemail" name="repemail" placeholder="E-mail pessoal" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="input_senha"><span class="obrigatorio">*</span>Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="letras e números de 6 a 12 caracteres" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="input_repsenha"><span class="obrigatorio">*</span>Confirmar Senha:</label>
+                        <input type="password" class="form-control" id="repsenha" name="repsenha" placeholder="letras e números de 6 a 12 caracteres" >
+                    </div>
+                </div>
+
+                <label for="label_texto_obrigatorio" class="label_obrigatorio">* Campos obrigatórios!</label>
+            </form>
+            
+            <!-- Animacao de carga-->
+            <img src="./src/img/Loading4.gif" class="loading_cidadaonovo" style="width:150px; height:150px; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><samp class="modal_icone_cancelar_xl"><span class="modal_titulo_cancelar_xl">Cancelar</span></button>
+            <button type="button" class="btn btn-success" onclick="cidadaonovo()"><samp class="modal_icone_cadastrar_xl"><span class="modal_titulo_cadastrar_xl">Cadastrar</span></button>
+        </div>
+        
+    </body>
+</html>
